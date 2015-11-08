@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="t7T-6X-drO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="gIV-Uq-R4D">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
@@ -97,7 +97,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="5AR-Qk-PKS">
                             <connections>
-                                <segue destination="LWt-zF-NgK" kind="push" id="GOC-GY-RSD"/>
+                                <segue destination="gIV-Uq-R4D" kind="push" id="GOC-GY-RSD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -540,10 +540,10 @@
             </objects>
             <point key="canvasLocation" x="2130" y="260"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Recipe View Controller-->
         <scene sceneID="9an-k1-UVO">
             <objects>
-                <viewController id="LWt-zF-NgK" sceneMemberID="viewController">
+                <viewController id="LWt-zF-NgK" customClass="AddRecipeViewController" customModule="Recipe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ALj-Sx-BaM"/>
                         <viewControllerLayoutGuide type="bottom" id="URo-qv-Emq"/>
@@ -585,16 +585,12 @@
                                     <color key="titleColor" red="0.98921014060000001" green="1" blue="0.8838324031" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y9Z-Jn-eAY">
-                                <rect key="frame" x="28" y="458" width="272" height="54"/>
-                                <color key="backgroundColor" red="0.19522977929999999" green="0.44437914820000002" blue="0.31580247490000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Edit Steps">
-                                    <color key="titleColor" red="0.98921014060000001" green="1" blue="0.8838324031" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GaS-Kk-xOh">
                                 <rect key="frame" x="88" y="136" width="190" height="120"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="LWt-zF-NgK" id="hoY-jq-CqM"/>
+                                    <outlet property="delegate" destination="LWt-zF-NgK" id="Uss-YY-HO2"/>
+                                </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wsy-xH-1aP">
                                 <rect key="frame" x="28" y="185" width="65" height="21"/>
@@ -602,6 +598,17 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y9Z-Jn-eAY">
+                                <rect key="frame" x="28" y="458" width="272" height="54"/>
+                                <color key="backgroundColor" red="0.19522977929999999" green="0.44437914820000002" blue="0.31580247490000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Edit Steps">
+                                    <color key="titleColor" red="0.98921014060000001" green="1" blue="0.8838324031" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="frl-13-Cop" kind="push" id="0QX-73-nMM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -609,7 +616,43 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dfq-iW-heI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1792" y="1053"/>
+            <point key="canvasLocation" x="2324" y="1053"/>
+        </scene>
+        <!--Steps View Controller-->
+        <scene sceneID="F9I-sh-SuN">
+            <objects>
+                <viewController id="frl-13-Cop" customClass="StepsViewController" customModule="Recipe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LPk-cs-DuY"/>
+                        <viewControllerLayoutGuide type="bottom" id="L4L-EB-CJk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gPu-da-y5g">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QeM-KR-ENK">
+                                <rect key="frame" x="17" y="80" width="287" height="449"/>
+                                <subviews>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="i1R-ZK-ha5">
+                                        <rect key="frame" x="121" y="397" width="39" height="37"/>
+                                        <connections>
+                                            <action selector="pageControlDidPage:" destination="frl-13-Cop" eventType="valueChanged" id="Gwf-Qd-K3h"/>
+                                        </connections>
+                                    </pageControl>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kwR-Ef-Wrr"/>
+                    <connections>
+                        <outlet property="scrollView" destination="QeM-KR-ENK" id="Don-vV-TzY"/>
+                        <outlet property="stepsPageControl" destination="i1R-ZK-ha5" id="aYX-Gc-wdX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J5c-VU-yCP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2729" y="1053"/>
         </scene>
         <!--photos-->
         <scene sceneID="0eu-PK-VWk">
@@ -656,6 +699,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3w9-r3-m2n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2816" y="260"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8WE-Ec-V86">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gIV-Uq-R4D" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="KiR-DP-mbd"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mLs-Lk-Wo0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LWt-zF-NgK" kind="relationship" relationship="rootViewController" id="aQb-AP-TMm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u5R-xk-iH8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1792" y="1053"/>
         </scene>
     </scenes>
     <resources>
