@@ -1,17 +1,16 @@
 //
-//  HotRecipeTableViewCell.swift
+//  IngredientsTableViewCell.swift
 //  Recipe
 //
-//  Created by TinaTien on 2015/10/27.
+//  Created by TinaTien on 2015/11/9.
 //  Copyright © 2015年 TinaTien. All rights reserved.
 //
 
 import UIKit
 
-class HotRecipeTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var recipePic: UIImageView!
-    @IBOutlet weak var recipeName: UILabel!
+class IngredientsTableViewCell: UITableViewCell {
+    @IBOutlet weak var weightField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()
