@@ -9,7 +9,7 @@
 import UIKit
 
 class MyRecipeTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var editRecipe: UIButton!
     @IBOutlet weak var recipePic: UIImageView!
     @IBOutlet weak var recipeName: UILabel!
@@ -17,11 +17,11 @@ class MyRecipeTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }

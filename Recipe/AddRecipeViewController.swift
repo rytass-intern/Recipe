@@ -23,6 +23,7 @@ class AddRecipeViewController: UIViewController {
     
     var types = ["點心烘焙","米食","麵食","湯品","副餐"]
     
+    
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -33,5 +34,6 @@ class AddRecipeViewController: UIViewController {
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
         return types[row]
+        
     }
 }
