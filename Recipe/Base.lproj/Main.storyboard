@@ -566,27 +566,24 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="食物名稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xd4-YS-jHD">
-                                <rect key="frame" x="88" y="92" width="212" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Photos :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wd8-LY-6Am">
-                                <rect key="frame" x="28" y="304" width="77" height="21"/>
+                                <rect key="frame" x="28" y="313" width="77" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lzo-PB-BoF">
-                                <rect key="frame" x="118" y="304" width="127" height="30"/>
+                                <rect key="frame" x="106" y="309" width="127" height="30"/>
                                 <color key="backgroundColor" red="0.43929934072281729" green="1" blue="0.71066180852725225" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="chosse photos ">
                                     <color key="titleColor" red="0.98921014063246526" green="1" blue="0.88383240308453959" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="fromAlbum:" destination="LWt-zF-NgK" eventType="touchUpInside" id="c7Y-XX-whq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmy-Ij-BkT">
-                                <rect key="frame" x="28" y="383" width="272" height="54"/>
+                                <rect key="frame" x="28" y="399" width="272" height="44"/>
                                 <color key="backgroundColor" red="0.19522977934528321" green="0.44437914823008851" blue="0.31580247492560709" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Edit Ingredients">
@@ -609,8 +606,16 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uTE-Fc-7RI">
+                                <rect key="frame" x="96" y="89" width="198" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tNB-El-mZ3">
+                                <rect key="frame" x="247" y="297" width="53" height="53"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y9Z-Jn-eAY">
-                                <rect key="frame" x="28" y="458" width="272" height="54"/>
+                                <rect key="frame" x="28" y="462" width="272" height="44"/>
                                 <color key="backgroundColor" red="0.19522977929999999" green="0.44437914820000002" blue="0.31580247490000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Edit Steps">
@@ -624,6 +629,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="lqc-xJ-Mow"/>
+                    <connections>
+                        <outlet property="imageView" destination="tNB-El-mZ3" id="8OS-0O-cIC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dfq-iW-heI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -722,16 +730,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QeM-KR-ENK">
-                                <rect key="frame" x="17" y="80" width="287" height="449"/>
+                                <rect key="frame" x="17" y="80" width="283" height="348"/>
                                 <subviews>
                                     <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="i1R-ZK-ha5">
                                         <rect key="frame" x="121" y="397" width="39" height="37"/>
                                         <connections>
-                                            <action selector="pageControlDidPage:" destination="frl-13-Cop" eventType="valueChanged" id="Gwf-Qd-K3h"/>
+                                            <action selector="pageControlDidPage:" destination="frl-13-Cop" eventType="valueChanged" id="jjk-m1-ZMB"/>
                                         </connections>
                                     </pageControl>
                                 </subviews>
                             </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vPl-OH-049">
+                                <rect key="frame" x="183" y="436" width="117" height="112"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qme-TD-VGy">
+                                <rect key="frame" x="45" y="477" width="106" height="30"/>
+                                <state key="normal" title="choose photo"/>
+                                <connections>
+                                    <action selector="fromAlbum:" destination="frl-13-Cop" eventType="touchUpInside" id="5nU-yM-Cab"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -739,8 +757,9 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="g65-IP-EuD"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="imageView" destination="vPl-OH-049" id="UNf-QF-x0K"/>
                         <outlet property="scrollView" destination="QeM-KR-ENK" id="Don-vV-TzY"/>
-                        <outlet property="stepsPageControl" destination="i1R-ZK-ha5" id="aYX-Gc-wdX"/>
+                        <outlet property="stepsPageControl" destination="i1R-ZK-ha5" id="UBi-mC-Cw4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J5c-VU-yCP" userLabel="First Responder" sceneMemberID="firstResponder"/>
