@@ -25,6 +25,8 @@ class HotRecipeTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -45,12 +47,15 @@ class HotRecipeTableViewController: UITableViewController {
 
  
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("hotRecipe", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("hotRecipe", forIndexPath: indexPath) as! HotRecipeTableViewCell
 
         // Configure the cell...
 
         return cell
     }
+    
+
+
 
 
     /*
@@ -88,14 +93,19 @@ class HotRecipeTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        
+//        if segue == "showhotRecipe"{
+//            destinationController == ""
+        
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
-}
+

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="gIV-Uq-R4D">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="pHq-8c-5V3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -281,7 +281,7 @@
                                 <connections>
                                     <outlet property="recipeName" destination="2tg-TW-cJg" id="Rrs-yu-E8T"/>
                                     <outlet property="recipePic" destination="OaO-fT-OIn" id="Oe7-kb-ZJq"/>
-                                    <segue destination="pHq-8c-5V3" kind="push" identifier="shoeRecipeDetail" id="t54-md-5JB"/>
+                                    <segue destination="pHq-8c-5V3" kind="push" identifier="showRecipeDetail" id="t54-md-5JB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -488,7 +488,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A74-IX-V9T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2478" y="260"/>
+            <point key="canvasLocation" x="2483" y="273"/>
         </scene>
         <!--ingredients-->
         <scene sceneID="uY5-5R-a4f">
@@ -546,7 +546,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rzf-Jm-pRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2130" y="260"/>
+            <point key="canvasLocation" x="2113" y="242"/>
         </scene>
         <!--Add Recipe View Controller-->
         <scene sceneID="9an-k1-UVO">
@@ -622,7 +622,7 @@
                                     <color key="titleColor" red="0.98921014060000001" green="1" blue="0.8838324031" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="frl-13-Cop" kind="push" id="0QX-73-nMM"/>
+                                    <segue destination="8tt-rp-cSL" kind="push" id="lpt-mt-JXx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -715,7 +715,47 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AoM-qN-FH9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2324" y="1747"/>
+            <point key="canvasLocation" x="2312" y="1799"/>
+        </scene>
+        <!--Add Steps View Controller-->
+        <scene sceneID="h0N-J5-23P">
+            <objects>
+                <viewController id="8tt-rp-cSL" customClass="AddStepsViewController" customModule="Recipe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="swE-yF-VOS"/>
+                        <viewControllerLayoutGuide type="bottom" id="IdG-Yc-6Sk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8t1-z4-HRo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" alwaysBounceHorizontal="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wnr-cf-6mJ">
+                                <rect key="frame" x="40" y="128" width="240" height="312"/>
+                                <subviews>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="kPJ-Qy-kvl">
+                                        <rect key="frame" x="118" y="396" width="39" height="37"/>
+                                    </pageControl>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="8tt-rp-cSL" id="f8Y-Lh-Lfr"/>
+                                </connections>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="nPi-Ol-i9C">
+                                <rect key="frame" x="141" y="467" width="39" height="37"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.514959626" blue="0.62621043030000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Nqo-gK-7eO"/>
+                    <connections>
+                        <outlet property="pageControl" destination="nPi-Ol-i9C" id="ntT-uh-OdZ"/>
+                        <outlet property="scrollView" destination="wnr-cf-6mJ" id="Xur-H7-73j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fzh-h8-yhx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2837" y="1765"/>
         </scene>
         <!--Steps View Controller-->
         <scene sceneID="F9I-sh-SuN">
@@ -738,18 +778,18 @@
                                             <action selector="pageControlDidPage:" destination="frl-13-Cop" eventType="valueChanged" id="jjk-m1-ZMB"/>
                                         </connections>
                                     </pageControl>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qme-TD-VGy">
+                                        <rect key="frame" x="23" y="275" width="106" height="30"/>
+                                        <state key="normal" title="choose photo"/>
+                                        <connections>
+                                            <action selector="fromAlbum:" destination="frl-13-Cop" eventType="touchUpInside" id="5nU-yM-Cab"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </scrollView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vPl-OH-049">
                                 <rect key="frame" x="183" y="436" width="117" height="112"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qme-TD-VGy">
-                                <rect key="frame" x="45" y="477" width="106" height="30"/>
-                                <state key="normal" title="choose photo"/>
-                                <connections>
-                                    <action selector="fromAlbum:" destination="frl-13-Cop" eventType="touchUpInside" id="5nU-yM-Cab"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -764,7 +804,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J5c-VU-yCP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2729" y="1053"/>
+            <point key="canvasLocation" x="2879" y="1053"/>
         </scene>
         <!--photos-->
         <scene sceneID="0eu-PK-VWk">
